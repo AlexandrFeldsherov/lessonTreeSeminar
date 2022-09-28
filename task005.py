@@ -6,6 +6,11 @@
 # Решение оформлять в виде функций
 # По возможности добавляйте docstring
 
-num=5
-list=[]
+from function import CheckInputIntNumbers
+from function import FibonacciSequencePlusNega
 
+number=input("Введите челое число k : ")
+number=CheckInputIntNumbers(number)
+list=FibonacciSequencePlusNega(number)
+
+print(f"для k = {number} список будет выглядеть так: {list}")

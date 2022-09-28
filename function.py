@@ -191,3 +191,41 @@ def DifferenceFractionalPartListElement (list:list) -> int:
         listResultNew.append(i)
     conclusion=DifferenceMAxMinElement(listResultNew)
     return conclusion
+
+def FibonacciSequence(number:int,list:list) -> list:
+    
+    """
+    Cписок чисел Фибоначчи,  для "+" индексов
+    """
+    i=1
+    num=1
+    list=[0]
+    while (i<=number):
+        list.append(num)
+        num=num+list[i-1]
+        i+=1
+    return list
+
+def NegaFibonacciSequence(number:int,list:list) -> list:
+    """
+    Cписок чисел Фибоначчи,  для "-" индексов
+    """
+    listSecond=[]
+    i=1
+    while (i<=number):
+        negaNum=(-1)**(i+1)*list[i]
+        listSecond.append(negaNum)
+        i+=1
+    listSecond.reverse()
+    return listSecond
+    
+def FibonacciSequencePlusNega(number:int) ->list:
+    """
+    список чисел Фибоначчи, в том числе для отрицательных индексов
+    """
+    number=int(number)
+    list=[]
+    list = FibonacciSequence(number,list)
+    secondList=NegaFibonacciSequence(number,list)
+    return secondList+list
+
