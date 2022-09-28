@@ -167,7 +167,7 @@ def DifferenceMAxMinElement (listResult:list) -> int:
         elif min > i:
             min = i
     return max-min
-def DifferenceFractionalPartListElement (list:list) -> list:
+def DifferenceFractionalPartListElement (list:list) -> int:
 
     """
 Разницу между
