@@ -2,6 +2,7 @@ from pickle import APPEND
 import function
 from random import random
 import time
+import math
 
 
 def CheckInputIntNumbers(a):
@@ -125,3 +126,68 @@ def ProductPairs(list, j, i, newList: list):
         j = j-1
         i = i+1
     return newList
+
+def DifferenceFractionalPartListElement (list:list) -> float:
+    """
+Разница между
+максимальным и минимальным значением дробной части элементов
+    """
+    listResult = []
+    for i in list:
+        listFractional = math.modf(i)
+        listResult.append(listFractional[0])
+    max = listResult[0]
+    min = listResult[1]
+    if max < min:
+        a = max
+        max = min
+        min = a
+    for i in listResult:
+        if max < i:
+            max = i
+        elif min > i:
+            min = i
+    return max-min
+
+    import math
+def DifferenceMAxMinElement (listResult:list) -> int:
+    """
+Разница между
+максимальным и минимальным значением list int
+    """
+    max = listResult[0]
+    min = listResult[1]
+    if max < min:
+        a = max
+        max = min
+        min = a
+    for i in listResult:
+        if max < i:
+            max = i
+        elif min > i:
+            min = i
+    return max-min
+def DifferenceFractionalPartListElement (list:list) -> list:
+
+    """
+Разницу между
+максимальным и минимальным значением дробной части элементов в виде int
+    """
+    listResult=[]
+    for i in list:
+        i=str(i)
+        a= i.split(".")
+
+        listResult.append(("0."+a[1]))
+    for i in listResult:
+        a=0
+        if a<len(i):
+            a=len(i) 
+    j=10**(a-2)
+    k=0
+    listResultNew=[]
+    for i in listResult:
+        i=round(float(i)*j)
+        listResultNew.append(i)
+    conclusion=DifferenceMAxMinElement(listResultNew)
+    return conclusion
